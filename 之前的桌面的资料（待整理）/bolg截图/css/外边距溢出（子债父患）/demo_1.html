@@ -1,0 +1,51 @@
+<!-- 这是《子债父还》下的情况
+     当父元素无上外边距时，
+     其第一个元素，设置了
+     上外边距，表现出来的则是，
+     子元素设置的外边距，体现在了父元素上。
+     通俗记忆为：子债父还。
+     而设置除上外边距，意外的其他外边距，
+     均会实现在在父元素内的移动这种效果。
+ -->
+
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <mata charset="utf-8">
+    <title>子债父患</title>
+    <style type="text/css">
+        #d1,#d2{
+            width: 200px;
+            height: 200px;
+            background-color: #f00;
+        }
+        #par{
+            width: 200px;
+            height: 200px;
+            background-color: #0f0;
+        }
+        #son_1{
+            width: 100px;
+            height: 100px;
+            background-color: #00f;
+        }
+        #son_2{
+            width: 100px;
+            height: 100px;
+            background-color: #ff0;
+        }
+
+    </style>
+</head>
+<body>
+    <div id="d1">我是路人div</div>
+    <div id="par">
+        <div id="son_1">我是id为"par"的子div元素</div>
+        <div id="son_2">我是id为"par"的子div元素</div>
+    </div>
+    <div id="d2"></div>
+</body>
+</html>
+

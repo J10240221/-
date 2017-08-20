@@ -1,0 +1,53 @@
+<!-- 解决方案1
+     在其第一个子元素前，加<table>空标记，即可！
+     css代码如下
+     #son_1:before{
+        content: "";
+        display: table;
+     }
+     解决方案2
+    通过设置父元素的上内边距来替换子元素的上外边距。
+ -->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <mata charset="utf-8">
+    <title>子债父患</title>
+    <style type="text/css">
+        #d1,#d2{
+            width: 200px;
+            height: 200px;
+            background-color: #f00;
+        }
+        #par{
+            width: 200px;
+            height: 200px;
+            background-color: #0f0;
+        }
+        #son_1{
+            width: 100px;
+            height: 100px;
+            background-color: #00f;
+            margin-top: 100px;
+        }
+        #son_2{
+            width: 100px;
+            height: 100px;
+            background-color: #ff0;
+            margin-bottom: 100px;
+            z-index: 100;
+        }
+
+    </style>
+</head>
+<body>
+    <div id="d1">我是路人div</div>
+    <div id="par">
+        <div id="son_1">我是id为"par"的子div元素</div>
+        <div id="son_2">我是id为"par"的子div元素</div>
+    </div>
+    <div id="d2"></div>
+</body>
+</html>
+

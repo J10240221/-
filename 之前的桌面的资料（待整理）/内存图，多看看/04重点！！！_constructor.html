@@ -1,0 +1,39 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Insert a title</title>
+    <meta charset="utf-8">
+  </head>
+  <body>
+    <script>
+      "use strict";
+      function Emp(id,name,salary,age){
+        //this->新对象
+        //id只读，禁止删除
+        //name禁止删除
+        //salary禁止遍历，禁止删除
+        //age: 18~65之间
+        this.id=id;
+        this.name=name;
+        this.salary=salary;
+        var _age;//被访问器属性保护的局部变量，因为其在闭包里
+        Object.defineProperties(this,{
+          id:{writable:false,configurable:false},
+          name:{configurable:false},
+          salary:{enumerable:false},
+          age:{//此事已经用Object.defineProperties方法为对象添加了age属性！所以其默认的特性值为false
+            get:function(){return this._age},
+            set:function(val){
+              if(val>=18&&val<=65) _age=val;
+              else throw new RangeError("年龄不符合要求");
+            },
+            enumerable:true
+          }
+        })
+        this.age=age;//return回来的age
+      }
+      var xiaoHua=new Emp(10001,"xiaoHua",100000,30)
+      console.dir(xiaoHua);
+    </script>
+  </body>
+</html>

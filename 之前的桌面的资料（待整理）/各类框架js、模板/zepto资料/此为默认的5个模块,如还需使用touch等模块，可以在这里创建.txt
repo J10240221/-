@@ -1,0 +1,4 @@
+官方网址：
+http://github.e-sites.nl/zeptobuilder/
+
+一般而言：使用touch模块（都还会结合gesture、detect一起来使用）；所以要再勾选3个
